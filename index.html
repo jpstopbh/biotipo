@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Oportunidade para Representantes Comerciais | Biotipo Brazil</title>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
         * {
             margin: 0;
@@ -19,6 +21,11 @@
             align-items: center;
             height: 100vh;
             text-align: center;
+            flex-direction: column;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 20px;
         }
         .container {
             max-width: 800px;
@@ -62,19 +69,19 @@
             background: #fff;
             color: #000;
         }
-        .social-links {
-            margin-top: 20px;
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        .social-links img {
-            width: 30px;
-            height: 30px;
-        }
     </style>
 </head>
 <body>
+    <div id="google_translate_element"></div>
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'pt',
+                autoDisplay: true
+            }, 'google_translate_element');
+        }
+    </script>
+    <img src="/mnt/data/Logo Biotipo.png" alt="Biotipo Brazil Logo" class="logo">
     <div class="container">
         <h1>Se a oportunidade silenciou na sua carreira, é hora de agir!</h1>
         <div class="content">
@@ -86,14 +93,50 @@
         </div>
         <h2>O silêncio pode ser só a pausa antes do seu próximo grande avanço! 🚀</h2>
         <a class="cta-button" href="https://www.biotipobrazil.com">Junte-se a nós</a>
-        <div class="social-links">
-            <a href="https://www.instagram.com/biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
-            <a href="https://www.facebook.com/biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
-            <a href="https://www.youtube.com/@biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
-            <a href="https://www.tiktok.com/@biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="TikTok"></a>
-            <a href="https://www.linkedin.com/in/biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn"></a>
-        </div>
-        <p><strong>📲 WhatsApp:</strong> <a href="https://wa.me/5531996540642" style="color: #ff007f;">+55 31 99654-0642</a></p>
     </div>
+    <script>
+        (function(){
+            emailjs.init("YOUR_EMAILJS_USER_ID");
+        })();
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                console.log("Geolocalização não suportada pelo navegador.");
+            }
+        }
+
+        function showPosition(position) {
+            const lat = position.coords.latitude;
+            const lon = position.coords.longitude;
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    sendEmail(lat, lon, data.ip);
+                });
+        }
+
+        function showError(error) {
+            console.log("Erro ao obter localização: ", error);
+        }
+
+        function sendEmail(lat, lon, ip) {
+            let templateParams = {
+                to_email: "adm@unibeleza.com, paulo@unibeleza.com",
+                subject: "Novo Acesso à Landing Page",
+                message: `Alguém acessou a página!\n\nLocalização: Latitude ${lat}, Longitude ${lon}\nIP: ${ip}`
+            };
+
+            emailjs.send("service_a83d1l3", "template_k7f53a8", templateParams)
+                .then(function(response) {
+                    console.log("Email enviado com sucesso!", response.status, response.text);
+                }, function(error) {
+                    console.log("Erro ao enviar email: ", error);
+                });
+        }
+        
+        window.onload = getLocation;
+    </script>
 </body>
 </html>
