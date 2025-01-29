@@ -12,7 +12,7 @@
             font-family: 'Poppins', sans-serif;
         }
         body {
-            background: linear-gradient(135deg, #f1c40f, #e67e22); /* Gradiente dourado para laranja */
+            background: linear-gradient(135deg, #000000, #1a1a1a);
             color: #fff;
             display: flex;
             justify-content: center;
@@ -22,7 +22,7 @@
         }
         .container {
             max-width: 800px;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(255, 255, 255, 0.1);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -30,7 +30,11 @@
         h1 {
             font-size: 2.5em;
             margin-bottom: 15px;
-            color: #f1c40f; /* Dourado */
+            color: #fff;
+        }
+        .content {
+            text-align: left;
+            display: inline-block;
         }
         p {
             font-size: 1.2em;
@@ -38,60 +42,58 @@
             line-height: 1.6;
         }
         .highlight {
-            color: #f1c40f; /* Dourado */
+            color: #ff007f;
             font-weight: bold;
         }
         .cta-button {
             display: inline-block;
             padding: 15px 30px;
             margin-top: 20px;
-            background-color: #f1c40f; /* Dourado */
-            color: #000;
+            background-color: #ff007f;
+            color: #fff;
             font-size: 1.2em;
             font-weight: bold;
             text-decoration: none;
             border-radius: 8px;
-            transition: transform 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease;
         }
         .cta-button:hover {
             transform: scale(1.1);
-            background: #e67e22; /* Laranja */
+            background: #fff;
+            color: #000;
         }
         .social-links {
             margin-top: 20px;
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 25px;
         }
-        .social-links a {
-            font-size: 1.5em;
-            color: #f1c40f; /* Dourado */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .social-links a:hover {
-            color: #e67e22; /* Laranja */
+        .social-links img {
+            width: 30px;
+            height: 30px;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Se a oportunidade silenciou na sua carreira, é hora de agir!</h1>
-        <p><span class="highlight">🔹 Ajuste sua abordagem</span> – Teste novos argumentos de venda.</p>
-        <p><span class="highlight">🔹 Amplie seu alcance</span> – Explore novos nichos e clientes.</p>
-        <p><span class="highlight">🔹 Reforce sua presença online</span> – Use redes sociais e WhatsApp Business.</p>
-        <p><span class="highlight">🔹 Reative contatos</span> – Clientes antigos podem trazer novas vendas.</p>
-        <p><span class="highlight">🔹 Invista em capacitação</span> – Atualização gera oportunidades.</p>
+        <div class="content">
+            <p><span class="highlight">🔹 Ajuste sua abordagem</span> – Teste novos argumentos de venda.</p>
+            <p><span class="highlight">🔹 Amplie seu alcance</span> – Explore novos nichos e clientes.</p>
+            <p><span class="highlight">🔹 Reforce sua presença online</span> – Use redes sociais e WhatsApp Business.</p>
+            <p><span class="highlight">🔹 Reative contatos</span> – Clientes antigos podem trazer novas vendas.</p>
+            <p><span class="highlight">🔹 Invista em capacitação</span> – Atualização gera oportunidades.</p>
+        </div>
         <h2>O silêncio pode ser só a pausa antes do seu próximo grande avanço! 🚀</h2>
         <a class="cta-button" href="https://www.biotipobrazil.com">Junte-se a nós</a>
         <div class="social-links">
-            <a href="https://www.instagram.com/biotipobrazil">🔗 Instagram</a>
-            <a href="https://www.facebook.com/biotipobrazil">🔗 Facebook</a>
-            <a href="https://www.youtube.com/@biotipobrazil">🔗 YouTube</a>
-            <a href="https://www.tiktok.com/@biotipobrazil">🔗 TikTok</a>
-            <a href="https://www.linkedin.com/in/biotipobrazil">🔗 LinkedIn</a>
+            <a href="https://www.instagram.com/biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram"></a>
+            <a href="https://www.facebook.com/biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="Facebook"></a>
+            <a href="https://www.youtube.com/@biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+            <a href="https://www.tiktok.com/@biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/3046/3046123.png" alt="TikTok"></a>
+            <a href="https://www.linkedin.com/in/biotipobrazil"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384014.png" alt="LinkedIn"></a>
         </div>
-        <p><strong>📲 WhatsApp:</strong> <a href="https://wa.me/5531996540642" style="color: #f1c40f;">+55 31 99654-0642</a></p>
+        <p><strong>📲 WhatsApp:</strong> <a href="https://wa.me/5531996540642" style="color: #ff007f;">+55 31 99654-0642</a></p>
     </div>
 </body>
 </html>
